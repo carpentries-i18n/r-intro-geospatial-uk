@@ -314,9 +314,9 @@ head(gapminder)
 > {: .solution}
 {: .challenge}
 
-## Adding columns and rows in data frames
+## Додавання стовпців та рядків у фрейми даних
 
-We would like to create a new column to hold information on whether the life expectancy is below the world average life expectancy (70.5) or above:
+Ми б хотіли створити новий стовпець для інформації, про те, чи є очікувана тривалість життя нижче середньосвітової очікуваної тривалості життя (70.5) чи вище:
 
 
 ~~~
@@ -338,7 +338,7 @@ head(gapminder)
 ~~~
 {: .output}
 
-We can then add this as a column via:
+Потім ми можемо додати це, як стовпець за допомогою:
 
 
 ~~~
@@ -358,9 +358,9 @@ cbind(gapminder, below_average)
 ~~~
 {: .output}
 
-We probably don't want to print the entire dataframe each time, so
-let's put our `cbind` command within a call to `head` to return
-only the first six lines of the output.
+Ймовірно, ми не хочемо щоразу друкувати весь фрейм даних, тому
+давайте розмістимо нашу команду `cbind` всередині виклику `head`, щоб повернути 
+лише перші 6 рядків виводу.
 
 
 ~~~
@@ -381,7 +381,7 @@ head(cbind(gapminder, below_average))
 ~~~
 {: .output}
 
-Note that if we tried to add a vector of `below_average` with a different number of entries than the number of rows in the dataframe, it would fail:
+Зауважте, що якщо ми спробуємо додати вектор  `below_average` із різною кількістю записів, яка відрізняється від кількості рядків у фреймі даних, то нам це не вдасться:   
 
 
 ~~~
@@ -397,8 +397,8 @@ Error in data.frame(..., check.names = FALSE): arguments imply differing number 
 ~~~
 {: .error}
 
-Why didn't this work? R wants to see one element in our new column
-for every row in the table:
+Чому це не спрацювало? R хоче бачити один елемент у нашому новому стовпці
+для кожного рядка в таблиці:
 
 
 ~~~
@@ -427,7 +427,7 @@ length(below_average)
 ~~~
 {: .output}
 
-So for it to work we need either to have `nrow(gapminder)` = `length(below_average)` or `nrow(gapminder)` to be a multiple of `length(below_average)`: 
+Отже, щоб це працювало, нам потрібно, щоб `nrow(gapminder)` = `length(below_average)` або, щоб `nrow(gapminder)` було кратним `length(below_average)`: 
 
 
 ~~~
@@ -448,9 +448,9 @@ head(cbind(gapminder, below_average))
 6 Afghanistan 1977 14880372      Asia  38.438  786.1134         FALSE
 ~~~
 {: .output}
-The sequence `TRUE,TRUE,FALSE` is repeated over all the gapminder rows.
+Посдіовність `TRUE,TRUE,FALSE` повторюється для всіх рядків gapminder.
 
-Let's overwite the content of gapminder with our new data frame.
+Давайте замінимо вміст gapminder нашим новим фреймом даних.
 
 
 ~~~
@@ -459,7 +459,7 @@ gapminder <- cbind(gapminder, below_average)
 ~~~
 {: .language-r}
 
-Now how about adding rows? The rows of a data frame are lists:
+А як щодо додавання рядків? Рядки фрейму даних є списками:
 
 
 ~~~
@@ -482,24 +482,24 @@ tail(gapminder_norway)
 ~~~
 {: .output}
 
-To understand why R is giving us a warning when we try to add this row, let's learn a little more about factors.
+Щоб зрозуміти, чому R дає нам попередження, коли ми намагаємося додати цей рядок, давайте дізнаємося трохи більше про фактори. 
 
 ## Фактори
 
-Here is another thing to look out for: in a `factor`, each different value
-represents what is called a `level`. In our case, the `factor` "continent" has 5
-levels: "Africa", "Americas", "Asia", "Europe" and "Oceania". R will only accept
-values that match one of the levels. If you add a new value, it will become
+Ось ще одна річ, на яку потрібно звернути увагу: у `factor`, кожне окреме значення
+представляє, що називається `level`. У нашому випадку,  `factor` "континент" має 5
+рівнів: "Africa", "Americas", "Asia", "Europe" and "Oceania". R прийматиме лише
+ті значення, які відповідають одному з рівнів. Якщо ви додасте нове значення, воно стане
 `NA`.
 
-The warning is telling us that we unsuccessfully added "Nordic" to our
-*continent* factor, but 2016 (a numeric), 5000000 (a numeric), 80.3 (a numeric),
-49400.0 (a numeric) and `FALSE` (a logical) were successfully added to
-*country*, *year*, *pop*, *lifeExp*, *gdpPercap* and *below_average*
-respectively, since those variables are not factors. 'Norway' was also
-successfully added since it corresponds to an existing level. To successfully
-add a gapminder row with a "Nordic" *continent*, add "Nordic" as a *level* of
-the factor:
+Попередження говорить нам про те, що ми невдало додали "Nordic" до нашого
+*континет* фактору, але 2016 (числове), 5000000 (числове), 80.3 (числове),
+49400.0 (числове) і `FALSE` (логічне) були успішно додані до
+*country*, *year*, *pop*, *lifeExp*, *gdpPercap* і *below_average*
+відповідно, оскільки ці змінні не є факторами. 'Norway' також була
+успішно додана, оскільки вона відповідає існуючому рівню. Щоб успішно
+додати рядок gapminder з "Nordic" *континент*, і "Nordic" як *рівень* 
+фактора:
 
 
 ~~~
@@ -551,9 +551,9 @@ tail(gapminder_norway)
 ~~~
 {: .output}
 
-Alternatively, we can change a factor into a character vector; we lose the handy
-categories of the factor, but we can subsequently add any word we want to the
-column without babysitting the factor levels:
+Крім того, ми можемо змінити фактор на символьний вектор; ми втрачаємо зручні
+категорії фактора, але згодом ми можемо додати до стовпця будь-яке слово, 
+яке ми захочемо, не піклуючись про рівні фактора:
 
 
 ~~~
@@ -598,10 +598,10 @@ str(gapminder)
 ~~~
 {: .output}
 
-## Appending to a data frame
+## Додавання до фрейму даних
 
-The key to remember when adding data to a data frame is that *columns are
-vectors and rows are lists.* We can also glue two data frames together with
+Під час додавання до фрейму даних, слід пам'ятати, що *стовпці - це 
+вектори і рядки - це списки.* Ми також можемо склеїти два фрейма даних разом, використовуючи
 `rbind`:
 
 
@@ -620,8 +620,8 @@ tail(gapminder, n=3)
 3408 Zimbabwe 2007 12311143    Africa  43.487  469.7093          TRUE
 ~~~
 {: .output}
-But now the row names are unnecessarily complicated (not consecutive numbers).
-We can remove the rownames, and R will automatically re-name them sequentially:
+Але тепер назви рядків надто складні (не послідовні номери).
+Ми можемо видалити назви рядків, і R автоматично перейменує їх послідовно:
 
 
 ~~~
@@ -645,7 +645,7 @@ head(gapminder)
 
 > ## Завдання 3
 >
-> You can create a new data frame right from within R with the following syntax:
+> Ви можете створити новий фрейм даних прямо з R за допомогою такого синтаксису:
 > 
 > ~~~
 > df <- data.frame(id = c("a", "b", "c"),
@@ -655,17 +655,17 @@ head(gapminder)
 > ~~~
 > {: .language-r}
 >
-> Make a data frame that holds the following information for yourself:
+> Створіть для себе фрейм даних, який містить таку інформацію:
 >
-> - first name
-> - last name
-> - lucky number
+> - ім'я
+> - прізвище
+> - щасливе число
 >
-> Then use `rbind` to add an entry for the people sitting beside you. Finally,
-> use `cbind` to add a column with each person's answer to the question, "Is it
-> time for coffee break?"
+> Потім використовуйте `rbind`, щоб додати запис для людей, які сидять поруч з вами. Нарешті,
+> скористайтеся `cbind` для додавання стовпця з відповідями кожного користувача на запитання, "Чи
+> час для перерви на каву?"
 >
-> > ## Solution to Challenge 3
+> > ## Розв'язання до завдання 3
 > >
 > > 
 > > ~~~

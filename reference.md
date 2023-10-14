@@ -3,76 +3,75 @@ layout: reference
 ---
 {% include base_path.html %}
 
-## Reference
+## Посилання
 
-## [Introduction to R and RStudio]({{ relative_root_path }}/{% link _episodes/01-rstudio-intro.md %})
+## [Введення в R та RStudio]({{ relative_root_path }}/{% link _episodes/01-rstudio-intro.md %})
 
- - Use the escape key to cancel incomplete commands or running code
-   (Ctrl+C) if you're using R from the shell.
- - Basic arithmetic operations follow standard order of precedence:
-   - Brackets: `(`, `)`
-   - Exponents: `^` or `**`
-   - Divide: `/`
-   - Multiply: `*`
-   - Add: `+`
-   - Subtract: `-`
- - Scientific notation is available, e.g: `2e-3`
- - Anything to the right of a `#` is a comment, R will ignore this!
- - Functions are denoted by `function_name()`. Expressions inside the
-   brackets are evaluated before being passed to the function, and
-   functions can be nested.
- - Comparison operators: `<`, `<=`, `>`, `>=`, `==`, `!=`
- - Use `all.equal` to compare numbers!
- - `<-` is the assignment operator. Anything to the right is evaluate, then
-   stored in a variable named to the left.
- - `ls` lists all variables and functions you've created
- - `rm` can be used to remove them
- - When assigning values to function arguments, you _must_ use `=`.
+ - Використовуйте клавішу <kbd>Esc</kbd> для скасування незавершених команд або запущеного коду
+(Ctrl+C), якщо ви використовуєте R з терміналу.
+- Базові арифметичні операції виконуються в стандартному порядку пріоритетів:
+- Дужки: `(`, `)`
+- Експоненти: `^` або `**`
+- Ділення: `/`
+- Множення: `*`
+- Додавання: `+`
+- Віднімання: `-`.
+- Можна використовувати наукове позначення, наприклад: `2e-3`.
+- Все, що знаходиться праворуч від `#` є коментарем, R ігнорує його!
+- Функції позначаються через `ім'я_функції()`. Вирази всередині дужок
+обчислюються перед передачею у функцію, а
+функції можуть бути вкладеними.
+- Оператори порівняння: `<`, `<=`, `>`, `>=`, `==`, `!=`
+- Використовуйте `all.equal` для порівняння чисел!
+- `<-` - оператор присвоювання. Все, що знаходиться праворуч, обчислюється, а потім
+зберігається у змінній, названій ліворуч.
+- `ls` виводить список усіх створених вами змінних і функцій
+- `rm` можна використовувати для їх видалення
+- При присвоюванні значень аргументам функції ви _обов'язково_ повинні використовувати `=`.
 
-## [Project management with RStudio]({{ relative_root_path }}/{% link _episodes/02-project-intro.md %})
+## [Управління проєктами в RStudio]({{ relative_root_path }}/{% link _episodes/02-project-intro.md %})
 
- - To create a new project, go to File -> New Project
- - Some best practices:
-   * Treat data as read-only
-   * Keep cleaned data separate from raw dirty data
-   * Treat generated output as disposable
-   * Keep related data together
-   * Use a consistent naming scheme
+- Для створення нового проєкту виберіть File -> New Project (Файл -> Новий проєкт)
+- Деякі найкращі практики:
+* Розглядайте дані як доступні лише для читання
+* Зберігайте очищені дані окремо від необроблених брудних даних
+* Розглядайте згенероване виведення як одноразове
+* Зберігайте пов'язані дані разом
+* Використовуйте послідовну схему іменування
 
-## [Data Structures]({{ relative_root_path }}/{% link _episodes/03-data-structures-part1.md %})
+## [Структури даних]({{ relative_root_path }}/{% link _episodes/03-data-structures-part1.md %})
 
-- Use `read.csv()` to import data in memory
-- ` class()` gives you the data class of your object
-- R automatic converts data types
-- The functions: `length()`, `nrow()`, `head()`, `tail()`, and `str()` can be
-  useful to explore data.
-- Factors are a special class to deal with categorical data.
-- Lists provide a flexible data type.
-- Data frames are a special case of lists.
+- Використовуйте `read.csv()` для імпорту даних в пам'ять
+- ` class()` надає вам клас даних вашого об'єкту
+- R автоматично перетворює типи даних
+- Функції `length()`, `nrow()`, `head()`, `tail()` та `str()` можуть бути
+  корисними для перегляду даних.
+- Фактори - це спеціальний клас для роботи з категоріальними даними.
+- Списки забезпечують гнучкий тип даних.
+- Фрейми даних є окремим випадком списків.
 
-## [Exploring Data Frames]({{ relative_root_path }}/{% link _episodes/04-data-structures-part2.md %})
+## [Вивчення фреймів даних]({{ relative_root_path }}/{% link _episodes/04-data-structures-part2.md %})
 
-* R makes it easy to import datasets storred remotely
-* **[Data Frames]({{ relative_root_path }}/05-data-structures-part2/)**
+* R дозволяє легко імпортувати набори даних, що зберігаються віддалено
+* **[Фрейми даних]({{ relative_root_path }}/05-data-structures-part2/)**
  - `?data.frame` is a key data structure. It is a `list` of `vectors`.
  - `cbind()` will add a column (vector) to a data.frame.
  - `rbind()` will add a row (list) to a data.frame.
 
- **Useful functions for querying data structures:**
- - `?str` structure, prints out a summary of the whole data structure
- - `?class` what is the data structure?
- - `?head` print the first `n` elements (rows for two-dimensional objects)
- - `?tail` print the last `n` elements (rows for two-dimensional objects)
- - `?rownames`, `?colnames`, `?dimnames` retrieve or modify the row names
-   and column names of an object.
- - `?length` get the number of elements in an atomic vector
- - `?nrow`, `?ncol`, `?dim` get the dimensions of a n-dimensional object
-   (Won't work on atomic vectors or lists).
-* If your data frame contains factors, you need to take extra steps to add rows
-  that contain new level values.
+**Корисні функції для запиту структур даних
+- структура `?str`, виводить короткий опис всієї структури даних
+- `?class` що це за структура даних?
+- `?head` вивести перші `n` елементів (рядки для двовимірних об'єктів)
+- `?tail` вивести останні `n` елементів (рядки для двовимірних об'єктів)
+- `?rownames`, `?colnames`, `?dimnames` отримують або змінюють назви рядків
+та імена стовпців об'єкта.
+- `?length` отримують кількість елементів в атомарному векторі
+- `?nrow`, `?ncol`, `?dim` отримують розмірність n-вимірного об'єкта
+(Не працює для атомарних векторів та списків).
+* Якщо ваш фрейм даних містить фактори, вам потрібно виконати додаткові кроки, щоб додати рядки, які містять нові значення рівнів.
 
-- `read.csv` to read in data in a regular structure
-   - `sep` argument to specify the separator
+- `read.csv` зчитати дані у звичайній структурі
+   - `sep` аргумент для вказівки розділювача
      - "," for comma separated
      - "\t" for tab separated
    - Other arguments:

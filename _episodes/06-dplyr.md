@@ -116,7 +116,7 @@ year_country_gdp <- select(gapminder, year, country, gdpPercap)
 ~~~
 {: .language-r}
 
-![](../fig/13-dplyr-fig1.png)
+![]({{ site.baseurl }}/fig/13-dplyr-fig1.png)
 
 Якщо ми відкриємо `year_country_gdp` ми побачимо, що він містить тільки рік,
 країну і рівень ВВП. Вище ми використовували 'нормальну' граматику, але сильні сторони
@@ -239,7 +239,7 @@ tibble [1,704 × 6] (S3: grouped_df/tbl_df/tbl/data.frame)
 `data.frame` який містить лише рядки, що відповідають певному
 значенню 'континент' (принаймні, у наведеному вище прикладі).
 
-![](../fig/13-dplyr-fig2.png)
+![]({{ site.baseurl }}/fig/13-dplyr-fig2.png)
 
 ## Використання `summarize()`
 
@@ -286,7 +286,7 @@ gdp_bycontinents
 ~~~
 {: .output}
 
-![](../fig/13-dplyr-fig3.png)
+![]({{ site.baseurl }}/fig/13-dplyr-fig3.png)
 
 Це дозволило нам розрахувати середній показник ВВП для кожного континенту, але він стає 
 ще краще.

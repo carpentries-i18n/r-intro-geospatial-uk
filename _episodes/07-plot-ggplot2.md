@@ -62,7 +62,7 @@ ggplot(data = gapminder, aes(x = lifeExp)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-07-lifeExp-vs-gdpPercap-scatter-1.png" title="plot of chunk lifeExp-vs-gdpPercap-scatter" alt="plot of chunk lifeExp-vs-gdpPercap-scatter" width="612" style="display: block; margin: auto;" />
+<img src="{{ site.baseurl }}/fig/rmd-07-lifeExp-vs-gdpPercap-scatter-1.png" title="plot of chunk lifeExp-vs-gdpPercap-scatter" alt="plot of chunk lifeExp-vs-gdpPercap-scatter" width="612" style="display: block; margin: auto;" />
 
 Окремо виклику `ggplot`  недостаньо для побудови фігури: 
 
@@ -72,7 +72,7 @@ ggplot(data = gapminder, aes(x = lifeExp))
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-07-blank-plot-1.png" title="plot of chunk blank-plot" alt="plot of chunk blank-plot" width="612" style="display: block; margin: auto;" />
+<img src="{{ site.baseurl }}/fig/rmd-07-blank-plot-1.png" title="plot of chunk blank-plot" alt="plot of chunk blank-plot" width="612" style="display: block; margin: auto;" />
 
 Нам потрібно сказати `ggplot` як ми хочемо візуально представити дані, які ми
 створили, додавши геомний шар. У нашому прикладі, ми використали `geom_histogram()`, яка
@@ -93,7 +93,7 @@ ggplot(data = gapminder, aes(x = lifeExp)) +
 ~~~
 {: .output}
 
-<img src="../fig/rmd-07-lifeExp-vs-gdpPercap-scatter2-1.png" title="plot of chunk lifeExp-vs-gdpPercap-scatter2" alt="plot of chunk lifeExp-vs-gdpPercap-scatter2" width="612" style="display: block; margin: auto;" />
+<img src="{{ site.baseurl }}/fig/rmd-07-lifeExp-vs-gdpPercap-scatter2-1.png" title="plot of chunk lifeExp-vs-gdpPercap-scatter2" alt="plot of chunk lifeExp-vs-gdpPercap-scatter2" width="612" style="display: block; margin: auto;" />
 
 > ## Завдання 1
 >
@@ -117,7 +117,7 @@ ggplot(data = gapminder, aes(x = lifeExp)) +
 > > ~~~
 > > {: .output}
 > > 
-> > <img src="../fig/rmd-07-ch1-sol-1.png" title="plot of chunk ch1-sol" alt="plot of chunk ch1-sol" width="612" style="display: block; margin: auto;" />
+> > <img src="{{ site.baseurl }}/fig/rmd-07-ch1-sol-1.png" title="plot of chunk ch1-sol" alt="plot of chunk ch1-sol" width="612" style="display: block; margin: auto;" />
 > {: .solution}
 {: .challenge}
 
@@ -146,7 +146,7 @@ ggplot(data = gapminder_small, aes(x = country, y = gdpPercap)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-07-hist-subset-gapminder-1.png" title="plot of chunk hist-subset-gapminder" alt="plot of chunk hist-subset-gapminder" width="612" style="display: block; margin: auto;" />
+<img src="{{ site.baseurl }}/fig/rmd-07-hist-subset-gapminder-1.png" title="plot of chunk hist-subset-gapminder" alt="plot of chunk hist-subset-gapminder" width="612" style="display: block; margin: auto;" />
 
 With this many bars plotted, it's impossible to read all of the 
 x-axis labels. A quick fix to this is the add the `coord_flip()` 
@@ -160,7 +160,7 @@ ggplot(data = gapminder_small, aes(x = country, y = gdpPercap)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-07-hist-subset-gapminder-flipped-1.png" title="plot of chunk hist-subset-gapminder-flipped" alt="plot of chunk hist-subset-gapminder-flipped" width="612" style="display: block; margin: auto;" />
+<img src="{{ site.baseurl }}/fig/rmd-07-hist-subset-gapminder-flipped-1.png" title="plot of chunk hist-subset-gapminder-flipped" alt="plot of chunk hist-subset-gapminder-flipped" width="612" style="display: block; margin: auto;" />
 
 There are more sophisticated ways of modifying axis
 labels. We will be learning some of those methods
@@ -209,7 +209,7 @@ later in this workshop.
 > > ~~~
 > > {: .language-r}
 > > 
-> > <img src="../fig/rmd-07-gpd-per-cap-1.png" title="plot of chunk gpd-per-cap" alt="plot of chunk gpd-per-cap" width="612" style="display: block; margin: auto;" />
+> > <img src="{{ site.baseurl }}/fig/rmd-07-gpd-per-cap-1.png" title="plot of chunk gpd-per-cap" alt="plot of chunk gpd-per-cap" width="612" style="display: block; margin: auto;" />
 > {: .solution}
 {: .challenge}
 
